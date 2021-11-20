@@ -1,0 +1,28 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomHandlerDemo.MainPage"
+             xmlns:controls="clr-namespace:CustomHandlerDemo.Controls"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ScrollView>
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,*"
+              Padding="0,30,0,0">
+            <controls:ExtendedEntry
+                Placeholder="Hello"
+                BackgroundColor="Aqua"
+                Margin="20,0"
+                GridLayout.Row="0" />
+            
+            <Button 
+                GridLayout.Row="1"
+                Text="Change Animation State"
+                FontAttributes="Bold"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <controls:HeartBeatView
+                x:Name="heartBeatView"
+                GridLayout.Row="2" />
+        </Grid>
+    </ScrollView>
+</ContentPage>
