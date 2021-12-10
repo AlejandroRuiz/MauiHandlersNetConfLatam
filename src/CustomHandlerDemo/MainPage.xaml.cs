@@ -1,10 +1,8 @@
 ﻿using System;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Essentials;
 
 namespace CustomHandlerDemo
 {
-	public partial class MainPage : ContentPage
+    public partial class MainPage
 	{
 		public MainPage()
 		{

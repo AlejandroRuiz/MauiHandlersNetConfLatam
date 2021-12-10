@@ -9,7 +9,7 @@ namespace CustomHandlerDemo.Handlers
         {
             base.ConnectHandler(nativeView);
 
-            nativeView.SetBackgroundDrawable(null);
+            nativeView.Background = null;
         }
     }
 }
