@@ -9,7 +9,7 @@ namespace CustomHandlerDemo.Handlers
 {
     public partial class HeartBeatViewHandler : ViewHandler<HeartBeatView, UIImageView>
     {
-        protected override UIImageView CreateNativeView()
+        protected override UIImageView CreatePlatformView()
         {
             return new UIImageView();
         }
@@ -29,7 +29,7 @@ namespace CustomHandlerDemo.Handlers
 
         private static void MapIsBeating(HeartBeatViewHandler handler, HeartBeatView view)
         {
-            var hasAnimationRegistered = handler.NativeView.Layer.AnimationForKey("HeartAnimation") != null;
+            var hasAnimationRegistered = handler.PlatformView.Layer.AnimationForKey("HeartAnimation") != null;
 
             if (view.IsBeating)
             {
@@ -45,14 +45,14 @@ namespace CustomHandlerDemo.Handlers
                         animation.TimingFunction = CAMediaTimingFunction.FromName(CAMediaTimingFunction.EaseIn);
                     }
 
-                    handler.NativeView.Layer.AddAnimation(animation, "HeartAnimation");
+                    handler.PlatformView.Layer.AddAnimation(animation, "HeartAnimation");
                 }
             }
             else
             {
                 if (hasAnimationRegistered)
                 {
-                    handler.NativeView.Layer.RemoveAnimation("HeartAnimation");
+                    handler.PlatformView.Layer.RemoveAnimation("HeartAnimation");
                 }
             }
         }

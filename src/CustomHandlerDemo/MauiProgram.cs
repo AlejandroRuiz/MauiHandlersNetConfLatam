@@ -14,8 +14,8 @@ namespace CustomHandlerDemo
 				.UseMauiApp<App>()
 				.ConfigureMauiHandlers(handlers =>
 				{
-					handlers.AddHandler<HeartBeatView, HeartBeatViewHandler>();
-					handlers.AddHandler<ExtendedEntry, ExtendedEntryViewHandler>();
+					//handlers.AddHandler<HeartBeatView, HeartBeatViewHandler>();
+					//handlers.AddHandler<ExtendedEntry, ExtendedEntryViewHandler>();
 				})
 				.ConfigureFonts(fonts =>
 				{

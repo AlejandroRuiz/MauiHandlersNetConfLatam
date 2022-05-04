@@ -1,5 +1,4 @@
 ﻿using CustomHandlerDemo.Controls;
-using Microsoft.Maui;
 using Microsoft.Maui.Handlers;
 
 namespace CustomHandlerDemo.Handlers
@@ -8,7 +7,7 @@ namespace CustomHandlerDemo.Handlers
     {
         public static PropertyMapper<ExtendedEntry, ExtendedEntryViewHandler> ExtendedEntryViewMapper =
             //Map default entry handler
-            new(EntryHandler.EntryMapper)
+            new(EntryHandler.Mapper)
             {
                 //Map any custom property
                 //[nameof(HeartBeatView.IsBeating)] = MapIsBeating

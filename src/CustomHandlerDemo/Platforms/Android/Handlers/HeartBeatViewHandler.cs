@@ -2,14 +2,14 @@
 using Android.Widget;
 using CustomHandlerDemo.Controls;
 using Microsoft.Maui.Handlers;
-using System;
+using Animation = Android.Views.Animations.Animation;
 
 //Use same namespace as the shared Handler definition
 namespace CustomHandlerDemo.Handlers
 {
     public partial class HeartBeatViewHandler : ViewHandler<HeartBeatView, ImageView>
     {
-        protected override ImageView CreateNativeView()
+        protected override ImageView CreatePlatformView()
         {
             return new ImageView(Context);
         }
@@ -31,19 +31,19 @@ namespace CustomHandlerDemo.Handlers
             {
                 var animation = new Action(() =>
                 {
-                    var Ani = new ScaleAnimation(1, 1.2f, 1, 1.2f, handler.NativeView.Width / 2, handler.NativeView.Height / 2)
+                    var Ani = new ScaleAnimation(1, 1.2f, 1, 1.2f, handler.PlatformView.Width / 2, handler.PlatformView.Height / 2)
                     {
                         RepeatCount = Animation.Infinite,
                         Duration = 750,
                         Interpolator = new HeartBeatInterpolator()
                     };
-                    handler.NativeView.StartAnimation(Ani);
+                    handler.PlatformView.StartAnimation(Ani);
                 });
-                handler.NativeView.Post(animation);
+                handler.PlatformView.Post(animation);
             }
             else
             {
-                handler.NativeView.ClearAnimation();
+                handler.PlatformView.ClearAnimation();
             }
         }
 
